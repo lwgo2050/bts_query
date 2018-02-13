@@ -1,7 +1,7 @@
 var ws = new ReconnectingWebSocket("wss://bit.btsabc.org/ws");
-ws.debug = true;
-ws.timeoutInterval = 6000;
-ws.reconnectInterval = 3000;
+ws.debug = false;
+ws.timeoutInterval = 40000;
+ws.reconnectInterval = 12000;
 var param = {
     "id" : 1,
     "method" : "call",
