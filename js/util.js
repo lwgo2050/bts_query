@@ -20,3 +20,11 @@ function convetToUnixTime(str) {
 function convertDateToUTC(date) { 
     return new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
 }
+
+function convertUTC2LocalDate(utc) {
+    return (new Date(utc).getTime()*1000).toLocaleString();
+}
+
+function asset_to_real(amount, precision) {
+    return amount / Math.pow(10, precision);
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>资产历史交易记录,只包CNY交易记录</title>
+    <meta charset="utf-8"></meta>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.css"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css"/>
+    <link rel="stylesheet" href="./css/date.css"/>
+    <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.js"></script>
+    
+    <script src="https://cdn.bootcss.com/moment.js/2.18.1/moment-with-locales.min.js"></script>  
+    <link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet">  
+    <script src="./js/bootstrap-datetimepicker.min.js"></script>
+    
+    <script src="./js/util.js"></script>
+    <script src="./js/tableExport.js"></script>
+    <script src="./js/table_history.js"></script>
+    <script type="text/javascript" src="./js/bitsharesjs-ws.js"></script>
+
+</head>
+<body>
+    <div class="panel-body" style="padding-bottom:0px;">
+        <div class="panel panel-default">
+            <div class="panel-heading" id="title"></div>
+            <div class="panel-body">
+                <form id="formSearch" class="form-horizontal">
+                    <div class="form-group" style="margin-top:15px">
+                        <label class="control-label col-sm-1" for="txt_search_statu">资产</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="search_asset" value="GDEX.DHT"/>
+                        </div>
+                        <label class="form-group-title">日期范围</label>
+                        <div class="input-group date">
+                             <input id="startDate" class="form-control date-picker form-control-left">
+                             <span class="input-group-addon"></span>
+                             <input id="endDate" class="form-control date-picker form-control-right">
+                        </div>
+                        
+                        <div class="col-sm-2" style="text-align:left;">
+                            <button type="button" style="margin-left:50px" id="btn_query" class="btn btn-primary">查询</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>       
+        <table id="tb_history"></table>
+    </div>
+    <div class="modal fade" id="loadingModal">
+        <div style="width: 200px;height:20px; z-index: 20000; position: absolute; text-align: center; left: 50%; top: 50%;margin-left:-100px;margin-top:-10px">
+            <div class="progress progress-striped active" style="margin-bottom: 0;">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
+            <h5>正在查询...</h5>
+        </div>
+    </div>
+</body>
+<script src="./js/history_operate_all.js"></script>
+
+</html>

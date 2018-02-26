@@ -2,7 +2,7 @@
  var starteDate = new Date();
  var endDate = new Date;
 
-let server = "wss://bit.btsabc.org/ws";
+let server = "wss://ws.gdex.top";
 Api.instance(server, true).init_promise.then((res) => {
     console.log(res)
 }).catch(err => {
@@ -75,14 +75,6 @@ $(function() {
         }
         get_trade_history(response, Array.from(account_set))
     });
-//    Api.instance().db_api().exec("get_24_volume", ['CNY', 'BTS'])
-//    .then(response => {
-//        alert(response)
-//        console.log(response);
-//    });
-    //$("#loadingModal").modal('show');
-    
-    
 });
 });
 
@@ -101,6 +93,7 @@ function get_trade_history(data, accounts) {
         for (var i = 0; i < data.length; i++) {
             data[i].seller = account_map.get(data[i].side1_account_id);
             data[i].buyer = account_map.get(data[i].side2_account_id);
+            // data[i].date = convertUTC2LocalDate(data[i].date);
         }
         loadData(data);
        

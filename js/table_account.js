@@ -24,7 +24,7 @@ var TableInit = function() {
     var oTableInit = new Object();
     // 初始化Table
     oTableInit.Init = function() {
-        $('#tb_history').bootstrapTable(
+        $('#tb_account').bootstrapTable(
                 {
                     data : "", // json
                     // url:"" //请求后台的URL（*）
@@ -61,66 +61,37 @@ var TableInit = function() {
                                 checkbox : true
                             },
                             {
-                                field : 'date',
-                                title : '时间'
+                                field : 'account_name',
+                                title : '账户名称'
                             },
                             {
-                                field : 'buyer',
-                                title : '卖方'
-                            },
-                            {
-                                field : 'seller',
-                                title : '买方'
-                            },
-                            {
-                                field : 'price',
-                                title : '报价(CNY)',
+                                field : 'coin_amount',
+                                title : '代币数量',
                                 sortable : true,
                                 formatter : function(value, row, index) {
                                     // 通过判断单元格的值，来格式化单元格，返回的值即为格式化后包含的元素
-                                    return formatValue(value, 6);
+                                    return formatValue(value, 4);
                                 }
                             },
                             {
-                                field : 'amount',
-                                title : '数量(个)',
+                                field : 'coin_value',
+                                title : '代币价值',
                                 sortable : true,
                                 formatter : function(value, row, index) {
                                     // 通过判断单元格的值，来格式化单元格，返回的值即为格式化后包含的元素
-                                    var a = "";
-                                    if (value > 100000) {
-                                        var a = '<span style="color:#FF0000">'
-                                                + formatValue(value, 5)
-                                                + '</span>';
-                                    }
-                                    else {
-                                        var a = '<span>'
-                                                + formatValue(value, 5)
-                                                + '</span>';
-                                    }
-                                    return a;
-                                },
+                                    return formatValue(value, 4);
+                                }
                             },
                             {
-                                field : 'value',
-                                title : '金额(CNY)',
+                                field : 'cny',
+                                title : '账户可用CNY',
                                 sortable : true,
                                 formatter : function(value, row, index) {
                                     // 通过判断单元格的值，来格式化单元格，返回的值即为格式化后包含的元素
-                                    var a = "";
-                                    if (value > 50000) {
-                                        var a = '<span style="color:#FF0000">'
-                                                + formatValue(value, 4)
-                                                + '</span>';
-                                    }
-                                    else {
-                                        var a = '<span>'
-                                                + formatValue(value, 4)
-                                                + '</span>';
-                                    }
-                                    return a;
+                                    return formatValue(value, 4);
                                 }
-                            } ]
+                            }
+                     ]
                 });
     };
 

@@ -16,7 +16,7 @@ var quote_precision = 5;
 var queryResultStr="";
 
 // 查询条件参数
-var query_asset_name="GDEX.BKBT"
+var query_asset_name="GDEX.DHT"
 var query_order_type = "bid";
 var query_order_price = 0;
 
