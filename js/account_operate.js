@@ -155,9 +155,9 @@ function get_full_account() {
             
             if (holder.coin_amount > 0 ) {
                 // 处理percision 获取喂价信息，计算市值
-                console.log(holder.coin_amount);
+                // console.log(holder.coin_amount);
                 holder.coin_amount = asset_to_real(holder.coin_amount,symbols[1].precision);
-                console.log(holder.coin_amount);
+                // console.log(holder.coin_amount);
                 holder.cny = asset_to_real(holder.cny, symbols[0].precision);
                 
                 holders.push(holder);
