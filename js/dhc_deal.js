@@ -1,4 +1,4 @@
-var ws = new ReconnectingWebSocket("wss://bit.btsabc.org/ws");
+var ws = new ReconnectingWebSocket("wss://ws.gdex.top");
 ws.debug = false;
 ws.timeoutInterval = 40000;
 ws.reconnectInterval = 12000;
